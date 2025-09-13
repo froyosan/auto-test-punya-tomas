@@ -210,6 +210,8 @@ public class TestPengajuanSppd extends ReuseLoginSso {
         Assert.assertFalse(penyetujuText.isEmpty(), "Penyetuju takbole kosong");
 
         System.out.println("Preview Pengajuan SPPD sudah jos gandos.");
+
+        clickButtonByText("Simpan"); //jangan coba-coba di Production
     }
 
 }
