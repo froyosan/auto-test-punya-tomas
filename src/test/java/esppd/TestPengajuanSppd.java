@@ -77,7 +77,7 @@ public class TestPengajuanSppd extends ReuseLoginSso {
 
         WebElement btnNext = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//button[span[text()='Selanjutnya'] and contains(@class,'ant-btn-primary')]")));
-        Assert.assertTrue(btnNext.isDisplayed(), "Button 'Selanjutnya' seharusnya aktif setelah kedua tanggal diisi!");
+        Assert.assertTrue(btnNext.isDisplayed(), "Button 'Selanjutnya' seharusnya aktif setelah kedua tanggal dipilih");
     }
 
     public void pilihHariDalamPopup(WebElement popup, String dateValue) {
@@ -93,7 +93,7 @@ public class TestPengajuanSppd extends ReuseLoginSso {
         return LocalDate.parse(dateValue, parser).format(formatter);
     }
 
-    // SCENARIO TEST
+    // SCENARIO TEST PENGAJUAN SPPD
 
     @Test (groups = "modal1")
     public void moveModalPengajuan1() {
@@ -171,12 +171,12 @@ public class TestPengajuanSppd extends ReuseLoginSso {
                 break;
             }
         }
-        Assert.assertNotNull(btnChangeCost, "Button 'Change Cost Assigne' harus terlihat");
+        Assert.assertNotNull(btnChangeCost, "Button 'Change Cost Assigne' harus ada");
         Assert.assertEquals(btnChangeCost.getText().trim(), "Change Cost Assigne");
 
         WebElement buttonPreview = driver.findElement(
                 By.xpath("//button[contains(@class,'ant-btn-primary')][.//span[text()='Preview']]"));
-        Assert.assertTrue(buttonPreview.isDisplayed(), "Button 'Preview' harus terlihat");
+        Assert.assertTrue(buttonPreview.isDisplayed(), "Button 'Preview' sudah tidak disable");
         Assert.assertEquals(buttonPreview.getText().trim(), "Preview");
 
         clickButtonByText("Preview");
@@ -215,4 +215,3 @@ public class TestPengajuanSppd extends ReuseLoginSso {
     }
 
 }
-

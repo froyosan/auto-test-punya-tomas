@@ -20,7 +20,7 @@ public class TestLoginSso {
     private void initLoginSso() {
         System.setProperty("webdriver.chrome.driver", "C:/Program Files/Google/Chrome/Application/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.navigate().to("https://esppd.pln.co.id/");
+        driver.navigate().to("http://10.99.248.60:31300/");
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//button[span[text()='Login via SSO']]")).click();
     }
@@ -35,7 +35,7 @@ public class TestLoginSso {
         passwordInput.sendKeys("Sep09@2025");
         driver.findElement(By.cssSelector("button.ui.button.login-button.primary")).click();
         wait.until(ExpectedConditions.urlContains("/trips"));
-        Assert.assertEquals(driver.getCurrentUrl(), "https://esppd.pln.co.id/trips");
+        Assert.assertEquals(driver.getCurrentUrl(), "http://10.99.248.60:31300/trips");
     }
 
     @AfterTest

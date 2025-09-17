@@ -21,7 +21,7 @@ public class ReuseLoginSso {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.navigate().to("https://esppd.pln.co.id/");
+        driver.navigate().to("http://10.99.248.60:31300/");
         driver.findElement(By.xpath("//button[span[text()='Login via SSO']]")).click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -34,7 +34,7 @@ public class ReuseLoginSso {
 
         try {
             wait.until(ExpectedConditions.urlContains("/trips"));
-            Assert.assertEquals(driver.getCurrentUrl(), "https://esppd.pln.co.id/trips");
+            Assert.assertEquals(driver.getCurrentUrl(), "http://10.99.248.60:31300/trips");
             System.out.println("Login sukses");
         } catch (Exception e) {
             System.out.println("Login gagal");
